@@ -26,9 +26,9 @@ import timeit
 
 # Read a dataset
 facebookData = pd.read_csv('energyEff.csv', sep = ';')
-X = facebookData[facebookData.columns[0:1]].as_matrix()
+X = facebookData[facebookData.columns[3:4]].as_matrix()
 #X = X/100
-y = facebookData['Y2']
+y = facebookData['Y1']
 rng = np.random.RandomState(42)
 X_train, X_test, y_train, y_test = \
     train_test_split(X, y, test_size=0.75, random_state=rng)

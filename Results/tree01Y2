@@ -1,0 +1,33 @@
+[Command: python -u '/Users/lerin/Documents/Uni/TUWien/Machine Learning/Exercise 2/plot_tree_regression.py']
+===================================================================
+Decision Tree Regression
+===================================================================
+
+A 1D regression with decision tree.
+
+The :ref:`decision trees <tree>` is
+used to fit a sine curve with addition noisy observation. As a result, it
+learns local linear regressions approximating the sine curve.
+
+We can see that if the maximum depth of the tree (controlled by the
+`max_depth` parameter) is set too high, the decision trees learn too fine
+details of the training data and learn from the noise, i.e. they overfit.
+
+DecisionTree regression 1 score: 0.802
+ Mean squared error: 18.2146
+ Time: 0.000103
+DecisionTree regression 2 score: 0.879
+ Mean squared error: 11.1308
+ Time: 0.000066
+DecisionTree regression 3 score: 0.895
+ Mean squared error: 9.6670
+ Time: 0.000060
+DecisionTree regression 4 score: 0.909
+ Mean squared error: 8.3824
+ Time: 0.000060
+DecisionTree regression 5 score: 0.913
+ Mean squared error: 8.0134
+ Time: 0.000057
+/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/collections.py:548: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == 'face':
+objc[9170]: Class FIFinderSyncExtensionHost is implemented in both /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit (0x7fff8af00b68) and /System/Library/PrivateFrameworks/FileProvider.framework/OverrideBundles/FinderSyncCollaborationFileProviderOverride.bundle/Contents/MacOS/FinderSyncCollaborationFileProviderOverride (0x119923cd8). One of the two will be used. Which one is undefined.
