@@ -35,7 +35,7 @@ facebookData = pd.read_csv('energyEff.csv', sep = ';')
 heldout = [0.95, 0.90, 0.75, 0.50, 0.01]
 
 # Use only one feature
-X = facebookData[facebookData.columns[1:2]].as_matrix()
+X = facebookData[facebookData.columns[5:6]].as_matrix()
 y = facebookData['Y1']
 rng = np.random.RandomState(42)
 

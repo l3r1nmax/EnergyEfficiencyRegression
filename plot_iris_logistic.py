@@ -22,6 +22,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn import linear_model, datasets
+from sklearn.model_selection import train_test_split
 
 # import some data to play with
 #iris = datasets.load_iris()

@@ -1,0 +1,23 @@
+[Command: python -u '/Users/lerin/Documents/Uni/TUWien/Machine Learning/Exercise 2/SupportVectoRegression.py']
+===================================================================
+Support Vector Regression (SVR) using linear and non-linear kernels
+===================================================================
+
+Toy example of 1D regression using linear, polynomial and RBF kernels.
+
+
+Processing rbf
+Processing lin
+Processing isotonic
+0.013309 seconds
+Linear regression score: -0.324
+ Mean squared error: 137.6083
+ Time: 0.008417
+Radial basis function score: -0.362
+ Mean squared error: 141.5507
+ Time: 0.004078
+Isotonic score: -0.024
+ Mean squared error: 106.4203
+ Time: 0.000697
+/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/collections.py:548: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == 'face':

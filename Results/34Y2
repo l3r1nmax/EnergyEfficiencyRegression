@@ -1,0 +1,24 @@
+[Command: python -u '/Users/lerin/Documents/Uni/TUWien/Machine Learning/Exercise 2/SupportVectoRegression.py']
+===================================================================
+Support Vector Regression (SVR) using linear and non-linear kernels
+===================================================================
+
+Toy example of 1D regression using linear, polynomial and RBF kernels.
+
+
+Processing rbf
+Processing lin
+Processing isotonic
+7.839500 seconds
+Linear regression score: 0.744
+ Mean squared error: 23.5823
+ Time: 7.835405
+Radial basis function score: 0.813
+ Mean squared error: 17.2366
+ Time: 0.003405
+Isotonic score: -0.115
+ Mean squared error: 102.6359
+ Time: 0.000590
+/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/collections.py:548: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == 'face':
+objc[8873]: Class FIFinderSyncExtensionHost is implemented in both /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit (0x7fff8af00b68) and /System/Library/PrivateFrameworks/FileProvider.framework/OverrideBundles/FinderSyncCollaborationFileProviderOverride.bundle/Contents/MacOS/FinderSyncCollaborationFileProviderOverride (0x114f67cd8). One of the two will be used. Which one is undefined.
