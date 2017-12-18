@@ -21,11 +21,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 # #############################################################################
 # Generate sample data
 facebookData = pd.read_csv('energyEff.csv', sep = ';')
-X = facebookData[facebookData.columns[3:4]].as_matrix()
+X = facebookData[facebookData.columns[1:2]].as_matrix()
 #X = X/100
-y = facebookData['Y1']
+y = facebookData['Y2']
 rng = np.random.RandomState(42)
-
 X_train, X_test, y_train, y_test = \
     train_test_split(X, y, test_size=0.75, random_state=rng)
 
@@ -41,21 +40,30 @@ svr_lin = SVR(kernel='linear', C=1e3)
 svr_poly = SVR(kernel='poly', C=1e3, degree=2)
 logreg = LogisticRegression(C=1e5)
 print("Processing rbf")
+startRbf = timeit.default_timer()
 y_rbf = svr_rbf.fit(X_train, y_train).predict(X_test)
+stopRbf = timeit.default_timer()
 print("Processing lin")
+startLin = timeit.default_timer()
 y_lin = svr_lin.fit(X_train, y_train).predict(X_test)
+stopLin = timeit.default_timer()
 print("Processing poly")
+startPoly = timeit.default_timer()
 y_poly = svr_poly.fit(X_train, y_train).predict(X_test)
-print("Processing logistic")
-y_log = logreg.fit(X_train, y_train).predict(X_test)
+stopPoly = timeit.default_timer()
+#print("Processing logistic")
+#y_log = logreg.fit(X_train, y_train).predict(X_test)
 stop = timeit.default_timer()
 time = stop - start
+timeRbf = stopRbf - startRbf
+timeLin = stopLin - startLin
+timePoly = stopPoly - startPoly
 print('%.6f seconds' % time)
 # #############################################################################
-print('Logistic regression score: %.3f' % logreg.score(X_test,y_test))
-print("Linear regression score: %.3f" % svr_lin.score(X_test,y_test))
-print("Radial basis function score: %.3f" % svr_rbf.score(X_test,y_test))
-print('Polynomial score: %.3f' % svr_poly.score(X_test,y_test))
+#print('Logistic regression score: %.3f' % logreg.score(X_test,y_test))
+print("Linear regression score: %.3f\n Time: %.6f" % (svr_lin.score(X_test,y_test), timeLin))
+print("Radial basis function score: %.3f\n Time: %.6f" % (svr_rbf.score(X_test,y_test), timeRbf))
+print('Polynomial score: %.3f\n Time: %.6f' % (svr_poly.score(X_test,y_test), timePoly))
 
 # The mean squared error
 print("Mean squared error: %.2f"
@@ -68,7 +76,7 @@ plt.scatter(X_test[:,0], y_test, color='darkorange', label='data')
 plt.plot(X_test, y_rbf, color='navy', lw=lw, label='RBF model')
 plt.plot(X_test, y_lin, color='c', lw=lw, label='Linear model')
 plt.plot(X_test, y_poly, color='cornflowerblue', lw=lw, label='Polynomial model')
-plt.plot(X_test, y_log, color='red', lw=lw, label='Logistic regression')
+#plt.plot(X_test, y_log, color='red', lw=lw, label='Logistic regression')
 plt.xlabel('data')
 plt.ylabel('target')
 plt.title('Support Vector Regression')
